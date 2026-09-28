@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen On Wheels — Street food burgery, Roudnice nad Labem</title>
+<meta name="description" content="Kitchen On Wheels — kuchyně na kolech v Roudnici nad Labem. Poctivé burgery grilované přímo před vámi na Karlově náměstí. 4,9★ na Googlu, 271 recenzí.">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Modak&family=Mouse+Memoirs&family=Caveat:wght@600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=20260923b">
+<link rel="stylesheet" href="assets/css/sticker-peel.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-inner">
+    <span class="brand-badge loading-badge"><img src="assets/img/logo.jpg" alt="Kitchen On Wheels"></span>
+    <p class="loading-text">Grilujeme<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </div>
+</div>
+
+<a href="tel:+420731252051" class="float-call" aria-label="Zavolat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#hero" class="brand">
+      <span class="brand-badge"><img src="assets/img/logo.jpg" alt="Kitchen On Wheels logo"></span>
+      <span class="brand-name">Kitchen On Wheels<span>Street food na kolech</span></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#pribeh"><span class="nav-swap" data-text="Příběh"><span>Příběh</span></span></a>
+      <a href="#menu"><span class="nav-swap" data-text="Menu"><span>Menu</span></span></a>
+      <a href="#galerie"><span class="nav-swap" data-text="Galerie"><span>Galerie</span></span></a>
+      <a href="#recenze"><span class="nav-swap" data-text="Recenze"><span>Recenze</span></span></a>
+      <a href="#kde-nas-najdete"><span class="nav-swap" data-text="Kde nás najdete"><span>Kde nás najdete</span></span></a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+420731252051" class="phone-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>731 252 051</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-overlay-card">
+    <a href="#pribeh">Příběh</a>
+    <a href="#menu">Menu</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#recenze">Recenze</a>
+    <a href="#kde-nas-najdete">Kde nás najdete</a>
+    <div class="nav-overlay-divider"></div>
+    <a href="tel:+420731252051" class="btn btn-dark nav-overlay-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      731 252 051
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-top">
+      <p class="hero-eyebrow"><span class="dot"></span> Street food na kolech · Roudnice nad Labem</p>
+      <h1 class="hero-giant">Burgery</h1>
+      <p class="hero-sub">Poctivé maso, čerstvé pečivo a vlastní omáčky — všechno se grilluje přímo před vámi na Karlově náměstí. Žádný fast food, jen řemeslo na kolech.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-blob" data-cursor-hide>
+          <svg class="btn-blob-svg" viewBox="0 0 300 116" preserveAspectRatio="none" aria-hidden="true">
+            <path class="btn-blob-fill" d="M22,64 C18,30 55,10 116,9 C168,8 196,-4 240,10 C282,23 293,54 286,78 C278,105 234,116 178,113 C120,110 78,118 45,103 C15,90 25,88 22,64 Z"/>
+            <path class="btn-blob-outline" d="M22,64 C18,30 55,10 116,9 C168,8 196,-4 240,10 C282,23 293,54 286,78 C278,105 234,116 178,113 C120,110 78,118 45,103 C15,90 25,88 22,64 Z"/>
+          </svg>
+          <span class="btn-blob-text">Zobrazit menu</span>
+        </a>
+        <a href="#kde-nas-najdete" class="btn btn-outline">Kde nás najdete</a>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="hero-photo-cutout floaty">
+        <img src="assets/img/stock-hero-burger-cutout.png" alt="Burger Kitchen On Wheels" class="hero-photo">
+        <span class="bite bite-1"></span>
+        <span class="bite bite-2"></span>
+      </div>
+      <span class="sticker sticker-mustard rot-1 st-1 floaty">Grilujeme<br>před vámi</span>
+      <span class="sticker sticker-red rot-2 st-2 floaty">Vše poctivé</span>
+      <span class="sticker sticker-cream rot-3 st-3 floaty">4,9★ Google</span>
+      <span class="sticker sticker-mustard rot-4 st-4 floaty">Vlastní omáčky</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Poctivé burgery</span><span>Grilujeme na místě</span><span>Vlastní omáčky</span><span>Karlovo náměstí, Roudnice n. L.</span>
+    <span>Poctivé burgery</span><span>Grilujeme na místě</span><span>Vlastní omáčky</span><span>Karlovo náměstí, Roudnice n. L.</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wave-edge wave-edge-top"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path class="wave-fill-cream" d="M0,0 L0,35 C200,85 400,10 600,45 C800,80 1000,15 1200,55 L1200,0 Z"/></svg></div>
+  <div class="container">
+    <div class="reveal">
+      <h2>Jídlo, po kterém<br>se <span class="stroke">nestydíte</span> olíznout prsty</h2>
+      <p class="stats-sub">Žádné mražené polotovary. Maso, zelenina i omáčky se připravují čerstvé, každý den, přímo v okénku trucku.</p>
+    </div>
+    <div class="sticker-stage reveal" data-sticker-peel data-src="assets/img/burger_finger_licking_transparent.svg" data-width="380" data-rotate="0" data-hover="20" data-active="40" data-shadow="0.6" data-light="0.1">
+      <span class="sticker-hint">chyť a přetáhni<span class="h-hover"> · najeď a odlep</span></span>
+    </div>
+    <div class="stats-row reveal-stagger">
+      <div class="stat-line r-item"><b>4,9★</b> Google, 271 recenzí</div>
+      <div class="stat-line r-item"><b>100 %</b> grilováno na místě</div>
+      <div class="stat-line r-item"><b>Nula</b> polotovarů a mražáku</div>
+      <div class="stat-line r-item"><b>Jeden</b> truck, jedno náměstí</div>
+    </div>
+  </div>
+  <div class="wave-edge wave-edge-bottom"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path class="wave-fill-cream" d="M0,100 L0,65 C200,15 400,90 600,55 C800,20 1000,85 1200,45 L1200,100 Z"/></svg></div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="pribeh">
+  <div class="container">
+    <div class="story-media reveal">
+      <span class="sticker sticker-red rot-2 story-sticker">Roudnice n. L.</span>
+      <img src="assets/img/truck-square.jpg" alt="Truck Kitchen On Wheels na Karlově náměstí v Roudnici nad Labem">
+      <div class="story-owner-card">
+        <img src="assets/img/owner.jpg" alt="Majitel Kitchen On Wheels">
+        <div><b>Majitel na grilu</b><span>Osobně, na každé směně</span></div>
+      </div>
+    </div>
+    <div class="story-content reveal">
+      <p class="section-tag">Náš příběh</p>
+      <h2 class="pop-text">Truck, který patří<br>k náměstí.</h2>
+      <p>Kitchen On Wheels vznikla z jednoduché myšlenky — dělat burgery tak, jak by je čekali od dobré restaurace, jenže na kolech. Truck stojí na Karlově náměstí v Roudnici nad Labem a majitel u grilu bývá osobně, ať přijdete na oběd, nebo na burger po večerech.</p>
+      <p>Nic se nepřipravuje předem — maso i zelenina jdou na gril a do bulky až ve chvíli, kdy si objednáte. Kromě klasického stání na náměstí vyrážíme i na akce po Roudnici a okolí — od komunitních setkání po koncerty.</p>
+      <div class="story-badges">
+        <div class="story-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 1 9 9c0 4.5-4.5 9-9 11-4.5-2-9-6.5-9-11a9 9 0 0 1 9-9z"/></svg>
+          Karlovo náměstí, Roudnice n. L.
+        </div>
+        <div class="story-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+          Otevřeno denně · zavíráme ve 22:00
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="container">
+    <div class="statement-inner reveal">
+      <span class="typo-word tw-1">Poctivé</span>
+      <div class="statement-cutout floaty">
+        <img src="assets/img/stock-hero-burger-cutout.png" alt="Burger Kitchen On Wheels" class="statement-cutout-img">
+        <span class="bite bite-1"></span>
+        <span class="bite bite-2"></span>
+      </div>
+      <span class="typo-word tw-3">na každém soustu</span>
+    </div>
+  </div>
+</section>
+
+<!-- LAYERS -->
+<section class="layers">
+  <div class="wave-edge wave-edge-top"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path class="wave-fill-cream" d="M0,0 L0,40 C200,90 400,15 600,50 C800,85 1000,20 1200,60 L1200,0 Z"/></svg></div>
+  <div class="container">
+    <div class="layers-head reveal">
+      <p class="section-tag" style="justify-content:center">Vrstva po vrstvě</p>
+      <h2 class="pop-text">Co drží náš burger<br>pohromadě</h2>
+      <p>Žádné tajemství — jen poctivé suroviny, správně poskládané.</p>
+    </div>
+    <div class="layers-grid reveal-stagger">
+      <div class="layer-card r-item">
+        <img class="ingredient-img" src="assets/img/ingredients/bulka.png" alt="Čerstvá bulka">
+        <div class="ing-text">
+          <h3>Čerstvá bulka</h3>
+          <p>Sezamová bulka, opečená na grilu do křupava.</p>
+        </div>
+      </div>
+      <div class="layer-card r-item">
+        <img class="ingredient-img" src="assets/img/ingredients/zelenina.png" alt="Čerstvá zelenina">
+        <div class="ing-text">
+          <h3>Čerstvá zelenina</h3>
+          <p>Salát, rajče a cibulka nakrájené každý den čerstvé.</p>
+        </div>
+      </div>
+      <div class="layer-card r-item">
+        <img class="ingredient-img" src="assets/img/ingredients/cheddar.png" alt="Tavený cheddar">
+        <div class="ing-text">
+          <h3>Tavený cheddar</h3>
+          <p>Rozpuštěný přímo na grilu, dokud je placka horká.</p>
+        </div>
+      </div>
+      <div class="layer-card r-item">
+        <img class="ingredient-img" src="assets/img/ingredients/placka.png" alt="130g hovězí placka">
+        <div class="ing-text">
+          <h3>130g hovězí placka</h3>
+          <p>Grilovaná přímo před vámi, šťavnatá a propečená na míru.</p>
+        </div>
+      </div>
+      <div class="layer-card r-item">
+        <img class="ingredient-img" src="assets/img/ingredients/omacka.png" alt="Vlastní omáčky">
+        <div class="ing-text">
+          <h3>Vlastní omáčky</h3>
+          <p>Chipotle majonéza, BBQ i ranč — vařené podle vlastních receptů.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-edge wave-edge-bottom"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path class="wave-fill-cream" d="M0,100 L0,60 C200,10 400,85 600,50 C800,15 1000,80 1200,40 L1200,100 Z"/></svg></div>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="menu-head reveal">
+      <div>
+        <p class="section-tag">Co gril, to burger</p>
+        <h2 class="pop-text">Menu</h2>
+      </div>
+      <p class="menu-note">Skutečné položky a ceny přímo z tabule u okénka. Nabídka se občas mění podle toho, co je zrovna nejlepší.</p>
+    </div>
+
+    <div class="menu-grid reveal-stagger">
+      <div class="menu-item featured r-item">
+        <div class="menu-item-top">
+          <h3>Cheese Burger</h3>
+          <span class="menu-price">175 Kč</span>
+        </div>
+        <p>130g hovězí, cheddar, rajče, salát, cibule, kečup, majonéza, grilovaná cibulka.</p>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Jalapeño Burger</h3>
+          <span class="menu-price">185 Kč</span>
+        </div>
+        <p>130g hovězí, jalapeño, cheddar, slanina, salát, rajče, chipotle hořčice, grilovaná cibulka.</p>
+        <span class="menu-flag">Pálivé</span>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Chicken Burger</h3>
+          <span class="menu-price">175 Kč</span>
+        </div>
+        <p>150g kuřecí, cheddar, slanina, salát, rajče, BBQ omáčka, ranč majonéza, grilovaná cibulka.</p>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Kuřecí Texas Burger</h3>
+          <span class="menu-price">215 Kč</span>
+        </div>
+        <p>230g smaženého kuřecího stehenního filé, cheddar, slanina, jalapeño, salát, rajče, chipotle majonéza, jarní cibulka.</p>
+        <span class="menu-flag">Pálivé</span>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>BBQ Trhaný</h3>
+          <span class="menu-price">115 Kč</span>
+        </div>
+        <p>Pomalu vařené vepřové trhané maso, cheddar, slanina, salát, rajče, BBQ omáčka, nakládaná cibulka.</p>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Trhané hovězí v briošce</h3>
+          <span class="menu-price">135 Kč</span>
+        </div>
+        <p>Pomalu vařené trhané hovězí maso v měkké brioškové housce.</p>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Pastrami Sandwich</h3>
+          <span class="menu-price">125 Kč</span>
+        </div>
+        <p>Vlastní pastrami v čerstvém pečivu.</p>
+      </div>
+
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Wrap</h3>
+          <span class="menu-price">175 Kč</span>
+        </div>
+        <p>Kuřecí nebo trhané vepřové, salát, rajče, sýr, omáčka, grilovaná cibulka, slanina, cheddar, BBQ.</p>
+      </div>
+    </div>
+
+    <div class="sides-row reveal-stagger">
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Vařená kukuřice</h3>
+          <span class="menu-price">65 Kč</span>
+        </div>
+        <p>Sladká kukuřice, podávaná teplá.</p>
+      </div>
+      <div class="menu-item r-item">
+        <div class="menu-item-top">
+          <h3>Hranolky</h3>
+          <span class="menu-price">50 Kč</span>
+        </div>
+        <p>Křupavé hranolky jako příloha k burgeru.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galerie">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <p class="section-tag">Rovnou z grilu</p>
+      <h2>Pár záběrů odjinud než z talíře</h2>
+    </div>
+    <div class="gallery-grid reveal-stagger">
+      <figure class="r-item">
+        <img src="assets/img/truck-square.jpg" alt="Kitchen On Wheels na Karlově náměstí">
+        <figcaption>Karlovo náměstí, Roudnice n. L.</figcaption>
+      </figure>
+      <figure class="r-item">
+        <img src="assets/img/burger-portobello.jpg" alt="Hovězí portobello burger">
+      </figure>
+      <figure class="r-item">
+        <img src="assets/img/salad-figs.jpg" alt="Salát s fíky">
+      </figure>
+      <figure class="r-item">
+        <img src="assets/img/burger-tofu.jpg" alt="Burger s grilovaným kozím sýrem"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="recenze">
+  <div class="container">
+    <div class="reviews-head reveal">
+      <div class="reviews-score">
+        <b>4,9</b>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="reviews-score-sub">271 recenzí na Googlu</div>
+        </div>
+      </div>
+      <div>
+        <p class="section-tag">Co říkají hosté</p>
+        <h2 style="font-size:clamp(26px,3.4vw,36px)">Recenze</h2>
+      </div>
+    </div>
+
+    <div class="reviews-grid reveal-stagger">
+      <div class="review-card r-item">
+        <div class="stars">★★★★★</div>
+        <p>„Skvělý podnik. Pan majitel byl velice příjemný, na burgery jsme čekali jen pár minut i přesto, že měli spousta objednávek. Bulka byla naprosto geniální…"</p>
+        <div class="review-author">
+          <div class="review-avatar">T</div>
+          <div><b>Tereza Slabá</b><span>Google · před 3 týdny</span></div>
+        </div>
+      </div>
+
+      <div class="review-card r-item">
+        <div class="stars">★★★★★</div>
+        <p>„Výborné a chutné burgery s čerstvou zeleninkou, které vznikají přímo před vašima očima. Za nás TOP cheeseburger a chickenburger…"</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div><b>Dominika Motejlová</b><span>Google · před 2 měsíci</span></div>
+        </div>
+      </div>
+
+      <div class="review-card r-item">
+        <div class="stars">★★★★★</div>
+        <p>„Dobře vychucený burger, hranolky tolik neoslovily, ale byly domácí! Majonéza nic moc…"</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div><b>Lukáš Vlček</b><span>Google · před 2 měsíci</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section class="find-us" id="kde-nas-najdete">
+  <div class="container">
+    <div class="find-us-info reveal">
+      <p class="section-tag">Najdete nás tady</p>
+      <h2 class="pop-text">Kde nás najdete</h2>
+      <p style="color:#4a382c;line-height:1.7;max-width:440px">Stojíme na Karlově náměstí v Roudnici nad Labem. Kromě toho vyrážíme i na akce po okolí — sledujte naše sociální sítě, ať vám nic neuteče.</p>
+
+      <div class="info-list">
+        <div class="info-row">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 1 9 9c0 4.5-4.5 9-9 11-4.5-2-9-6.5-9-11a9 9 0 0 1 9-9z"/><circle cx="12" cy="11" r="3"/></svg></span>
+          <div><b>Adresa</b><span>Karlovo náměstí, 413 01 Roudnice nad Labem</span></div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <div><b>Otevírací doba</b><span>Otevřeno denně · zavíráme ve 22:00</span></div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>Telefon</b><a href="tel:+420731252051">731 252 051</a></div>
+        </div>
+      </div>
+
+      <div class="hero-actions" style="margin-top:32px">
+        <a href="tel:+420731252051" class="btn btn-dark">Zavolat</a>
+        <a href="https://www.facebook.com/p/Kitchen-On-Wheels-Cz-100057486316680/?locale=cs_CZ" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:var(--ink);color:var(--ink)">Sledovat na Facebooku</a>
+      </div>
+    </div>
+
+    <div class="find-us-map reveal">
+      <iframe src="https://www.google.com/maps?q=Karlovo+n%C3%A1m%C4%9Bst%C3%AD,+Roudnice+nad+Labem&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Kitchen On Wheels, Roudnice nad Labem"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="sticker-stage sticker-stage--flat reveal" data-sticker-peel data-src="assets/img/kitchen_on_wheels_sticker.svg" data-width="330" data-rotate="0" data-hover="20" data-active="40" data-shadow="0.6" data-light="0.1"></div>
+    <div class="inner reveal">
+      <div>
+        <h3>Hlad přichází rychle.</h3>
+        <p>Zastavte se na Karlově náměstí — grilujeme, dokud slunce nezajde za kostelní věž.</p>
+      </div>
+      <a href="tel:+420731252051" class="btn btn-dark" style="background:var(--cream);color:var(--ink)">731 252 051</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BAND -->
+<section class="photo-band">
+  <div class="container">
+    <div class="strip-wrap">
+      <div class="strip reveal">
+        <img src="assets/img/stock-hand-burger.jpg" alt="Burger Kitchen On Wheels v ruce">
+        <span class="sticker sticker-mustard rot-1 band-tag">Chytněte a jezte</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav">
+      <a href="#pribeh">Příběh</a>
+      <a href="#menu">Menu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#recenze">Recenze</a>
+      <a href="#kde-nas-najdete">Kde nás najdete</a>
+    </nav>
+    <div class="footer-wordmark-zone">
+      <div class="footer-giant reveal">Kitchen<br>On Wheels</div>
+    </div>
+    <div class="footer-ingredients" aria-hidden="true">
+      <img src="assets/img/ingredients/bulka.png" alt="" style="left:10%">
+      <img src="assets/img/ingredients/zelenina.png" alt="" style="left:28%">
+      <img src="assets/img/ingredients/cheddar.png" alt="" style="left:50%">
+      <img src="assets/img/ingredients/placka.png" alt="" style="left:72%">
+      <img src="assets/img/ingredients/omacka.png" alt="" style="left:90%">
+    </div>
+    <div class="footer-icons">
+      <a href="https://www.facebook.com/p/Kitchen-On-Wheels-Cz-100057486316680/?locale=cs_CZ" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#241710" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kitchen_on_wheels_cz/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#241710" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="tel:+420731252051" aria-label="Telefon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#241710" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <div>Poctivé burgery · Grilujeme na místě · Karlovo náměstí, Roudnice n. L.</div>
+      <div>© 2026 Kitchen On Wheels. Všechna práva vyhrazena.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="assets/js/main.js?v=20260923b"></script>
+<script src="assets/js/sticker-peel.js"></script>
+</body>
+</html>
